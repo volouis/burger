@@ -1,10 +1,30 @@
 <h1>Eat-Da Burger</h1>
 
+
 <ul>
     {{#each burger}}
-    <li>{{this.id}}.{{this.burger_name}}     <button id="devour">devour!!</button></li>
+        {{#if this.devoured}}
+        {{else}}
+            <li>
+                {{this.burger_name}}<button class="change" data-id="{{this.id}}">devour!!</button>
+            </li>
+        {{/if}}
     {{/each}}
 </ul>
 
-<input id="burger">
-<button id="submit">Submit</button>
+
+<h3>Devoured</h3>
+<ul>
+    {{#each burger}}
+        {{#if this.devoured}}
+            <li>
+                {{this.burger_name}} 
+            </li>
+        {{/if}}
+    {{/each}}
+</ul>
+
+<form id="sub" >
+    <input id="burg" type="text" name="name" >
+    <button type="submit">Submit</button>
+</form>

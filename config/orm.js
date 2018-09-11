@@ -16,7 +16,7 @@ var orm = {
         });
     },
     updateOne: function(name, cb){
-        var queryString = `UPDATE burgers SET devoured=true WHERE burger_name = \"${name}\"`;
+        var queryString = `UPDATE burgers SET devoured=true WHERE id = \"${name}\"`;
         connection.query(queryString, function(err, res){
             if (err) throw err;
             cb(res)
